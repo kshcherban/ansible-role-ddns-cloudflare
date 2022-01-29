@@ -1,0 +1,5 @@
+ddns_cloudflare_version: "0.1.0"
+ddns_cloudflare_schedule: "*/5"
+ddns_cloudflare_token: null
+ddns_cloudflare_domain: "myip.example.com"
+ddns_cloudflare_log: "/var/log/ddns-cloudflare.log"
