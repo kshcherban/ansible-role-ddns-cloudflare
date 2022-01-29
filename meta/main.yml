@@ -1,0 +1,30 @@
+galaxy_info:
+  role_name: ddns_cloudflare
+  author: kshcherban
+  company: null
+  description: Manage Dynamic DNS on Cloudflare
+  issue_tracker_url: https://github.com/kshcherban/ansible-role-ddns-cloudflare/issues
+  license: MIT
+  min_ansible_version: 2.7
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Archlinux
+    versions:
+    - all
+  - name: EL
+    versions:
+    - all
+  - name: OpenSuse
+    versions:
+    - all
+  galaxy_tags:
+  - system
+  - dns
+  - networking
+
+dependencies: []
