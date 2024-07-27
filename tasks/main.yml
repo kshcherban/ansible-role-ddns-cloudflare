@@ -10,7 +10,7 @@
 
 - name: Create ddns-cloudflare symlink
   file:
-    srs: /usr/local/bin/ddns-cloudflare-{{ ddns_cloudflare_version }}
+    src: /usr/local/bin/ddns-cloudflare-{{ ddns_cloudflare_version }}
     dest: /usr/local/bin/ddns-cloudflare
     state: link
     force: yes
