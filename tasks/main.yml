@@ -4,10 +4,16 @@
     dest: /usr/local/bin
     mode: 0755
     remote_src: yes
-    creates: /usr/local/bin/ddns-cloudflare
+    creates: /usr/local/bin/ddns-cloudflare-{{ ddns_cloudflare_version }}
     owner: root
     group: root
-  become: yes
+
+- name: Create ddns-cloudflare symlink
+  file:
+    srs: /usr/local/bin/ddns-cloudflare-{{ ddns_cloudflare_version }}
+    dest: /usr/local/bin/ddns-cloudflare
+    state: link
+    force: yes
 
 - name: Setup ddns-cloudflare cron
   cron:
@@ -15,7 +21,6 @@
     minute: "{{ ddns_cloudflare_schedule }}"
     user: root
     job: "API_TOKEN={{ ddns_cloudflare_token }} DOMAIN={{ ddns_cloudflare_domain }} /usr/local/bin/ddns-cloudflare >> {{ ddns_cloudflare_log }} 2>&1"
-  become: yes
 
 - name: Rotate ddns-cloudflare log
   blockinfile:
@@ -31,4 +36,3 @@
                compress
                delaycompress
         }
-  become: yes
