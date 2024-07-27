@@ -7,6 +7,9 @@
     creates: /usr/local/bin/ddns-cloudflare-{{ ddns_cloudflare_version }}
     owner: root
     group: root
+    extra_opts:
+      - --transform
+      - s/cloudflare/cloudflare-{{ ddns_cloudflare_version }}/g
 
 - name: Create ddns-cloudflare symlink
   file:
